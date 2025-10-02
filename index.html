@@ -1,195 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Lloyd Cruza Alberio - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <div class="menu-toggle">☰</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <header>
-    <div class="container header-content">
-      <div class="profile-info">
-        <img src="loyd.jpg" alt="John Lloyd Alberio" class="profile-pic">
-        <h1>John Lloyd Cruza Alberio</h1>
-        <p class="subtitle">BSCS Student | UI/UX Enthusiast</p>
-        <p class="location">📍 Purok-1 Tabon, Bislig City</p>
-      </div>
-      <div class="hire-me">
-        <a href="https://www.facebook.com/share/1BRBV5ewku/" target="_blank" class="hire-button">Hire Me</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="card">
-      <h2>Personal Information</h2>
-      <ul>
-        <li><strong>Name:</strong> John Lloyd Cruza Alberio</li>
-        <li><strong>Address:</strong> Purok-1 Tabon, Bislig City</li>
-        <li><strong>Religion:</strong> Roman Catholic</li>
-        <li><strong>Date of Birth:</strong> June 24, 2004</li>
-        <li><strong>Age:</strong> 21</li>
-        <li><strong>School:</strong> De La Salle John Bosco College</li>
-      </ul>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>John Lloyd Alberio</h1>
+            <p>Maynagcot Alberio.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
     </section>
 
-    <section class="card">
-      <h2>Contact</h2>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:johnlloydalberio04@gmail.com">johnlloydalberio04@gmail.com</a></li>
-        <li><strong>Phone:</strong> <a href="tel:09274868151">09274868151</a></li>
-      </ul>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="loyd.jpg" alt="Profile Picture" class="profile-img">
+                <div class="about-text">
+                    <p>As a student, I’ve worked on academic projects and personal practice work that helped me strengthen my knowledge in [list a few key skills, e.g., Java, Python, HTML, CSS, JavaScript, MySQL].</p>
+                    <p>I enjoy learning new tools and frameworks, and I’m always eager to take on challenges that push me to grow.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="card">
-      <h2>Skills & Strengths</h2>
-      <ul class="skills">
-        <li>💻 Computer literacy (MS Office, Google Workspace)</li>
-        <li>🤝 Communication and teamwork</li>
-        <li>🚀 Adaptability and willingness to learn</li>
-        <li>🎨 Creative problem-solving</li>
-      </ul>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill">HTML</div>
+                <div class="skill">Java</div>
+                <div class="skill">Badminton</div>
+                <div class="skill">Nagmahal</div>
+                <div class="skill">Nasaktan</div>
+                <div class="skill">Iniwan</div>
+            </div>
+        </div>
     </section>
 
-    <section class="card">
-      <h2>Achievements & Certificates</h2>
-      <ul>
-        <li>Certificate of Participation – (Add here)</li>
-        <li>Leadership Training – (Add here)</li>
-      </ul>
+    
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/johnlloydcruzaalberio" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
+            </div>
+        </div>
     </section>
 
-    <section class="card">
-      <h2>About Me</h2>
-      <p>I am a motivated and hardworking individual who strives for excellence. With a passion for continuous learning and a strong sense of responsibility, I aim to contribute positively to any organization or project I am part of.</p>
+    <section id="grades" class="section grades">
+        <h2>Grades</h2>
+        <p>Midterm Grade: <span id="midtermGrade">Loading...</span></p>
+        <p>Final Grade: <span id="finalGrade">Loading...</span></p>
     </section>
 
-    <!-- 🔹 Student Grades Section -->
-    <section class="card">
-      <h2>Student Grades (from XML)</h2>
+    <footer>
+        <p>&copy; 2025 Modern Portfolio. All rights reserved.</p>
+    </footer>
 
-      <input type="text" id="searchId" placeholder="Enter Student ID..."
-             onkeypress="if(event.key === 'Enter'){findStudent();}" />
-      <button onclick="findStudent()">Search</button>
-
-      <div id="student-result" class="card" style="margin-top:20px; display:none;">
-        <h3>Result</h3>
-        <p><strong>Student ID:</strong> <span id="res-id"></span></p>
-        <p><strong>Lastname:</strong> <span id="res-lastname"></span></p>
-        <p><strong>Midterm Grade:</strong> <span id="res-midterm"></span></p>
-        <p><strong>Final Grade:</strong> <span id="res-final"></span></p>
-        <button onclick="downloadResult()">Download Result</button>
-      </div>
-
-      <p id="noResult" style="display:none; color:#ef4444; font-weight:600; margin-top:10px;">
-        Student ID not found.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 John Lloyd Cruza Alberio | Portfolio
-  </footer>
-
-  <!-- 🔹 Embed FULL students.xml directly -->
-  <script type="text/xml" id="student-xml">
-    <response>
-      <students>
-        <student><row_id>10</row_id><student_id>2340054</student_id><student_lastname>ALBERIO</student_lastname><midterm_grade>2.5</midterm_grade><final_grade>2.0</final_grade></student>
-        <student><row_id>4</row_id><student_id>2340012</student_id><student_lastname>ALMERIA</student_lastname><midterm_grade>2.5</midterm_grade><final_grade>2.0</final_grade></student>
-        <student><row_id>2</row_id><student_id>2340108</student_id><student_lastname>BAYLOSIS</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
-        <student><row_id>7</row_id><student_id>2340222</student_id><student_lastname>COMANDA</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
-        <student><row_id>3</row_id><student_id>2340127</student_id><student_lastname>CUIMAN</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
-        <student><row_id>1</row_id><student_id>2340048</student_id><student_lastname>DELFIN</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
-        <student><row_id>9</row_id><student_id>2340144</student_id><student_lastname>GEREDA</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
-        <student><row_id>11</row_id><student_id>2340085</student_id><student_lastname>GOMERA</student_lastname><midterm_grade>3.0</midterm_grade><final_grade>1.5</final_grade></student>
-        <student><row_id>13</row_id><student_id>2340098</student_id><student_lastname>GUIAS</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
-        <student><row_id>12</row_id><student_id>2340099</student_id><student_lastname>LACHICA</student_lastname><midterm_grade>5.0</midterm_grade><final_grade>1.0</final_grade></student>
-        <student><row_id>6</row_id><student_id>2340058</student_id><student_lastname>PABELONIA</student_lastname><midterm_grade>5.0</midterm_grade><final_grade>1.0</final_grade></student>
-        <student><row_id>15</row_id><student_id>2340204</student_id><student_lastname>PADILLA</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
-        <student><row_id>14</row_id><student_id>2340101</student_id><student_lastname>REIN</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
-        <student><row_id>8</row_id><student_id>2340084</student_id><student_lastname>TORREON</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
-        <student><row_id>5</row_id><student_id>2340020</student_id><student_lastname>ZASPA</student_lastname><midterm_grade>3.0</midterm_grade><final_grade>1.5</final_grade></student>
-      </students>
-    </response>
-  </script>
-
-  <!-- 🔹 Functions -->
-  <script>
-    let currentStudent = null;
-
-    function findStudent() {
-      const searchId = document.getElementById("searchId").value.trim();
-      const resultBox = document.getElementById("student-result");
-      const noResult = document.getElementById("noResult");
-
-      resultBox.style.display = "none";
-      noResult.style.display = "none";
-      currentStudent = null;
-
-      if (searchId === "") {
-        noResult.style.display = "block";
-        noResult.textContent = "Please enter a Student ID.";
-        return;
-      }
-
-      const xmlText = document.getElementById("student-xml").textContent.trim();
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-      const students = Array.from(xmlDoc.getElementsByTagName("student"));
-
-      let found = false;
-
-      for (let student of students) {
-        let id = student.getElementsByTagName("student_id")[0].textContent.trim();
-
-        if (id === searchId) {
-          let lastname = student.getElementsByTagName("student_lastname")[0].textContent.trim();
-          let midterm = student.getElementsByTagName("midterm_grade")[0].textContent.trim();
-          let final = student.getElementsByTagName("final_grade")[0].textContent.trim();
-
-          currentStudent = { id, lastname, midterm, final };
-
-          document.getElementById("res-id").textContent = id;
-          document.getElementById("res-lastname").textContent = lastname;
-          document.getElementById("res-midterm").textContent = midterm;
-          document.getElementById("res-final").textContent = final;
-
-          resultBox.style.display = "block";
-          found = true;
-          break;
-        }
-      }
-
-      if (!found) {
-        noResult.style.display = "block";
-        noResult.textContent = "Student ID not found.";
-      }
-    }
-
-    function downloadResult() {
-      if (!currentStudent) return;
-
-      const content =
-        `Student ID: ${currentStudent.id}\n` +
-        `Lastname: ${currentStudent.lastname}\n` +
-        `Midterm Grade: ${currentStudent.midterm}\n` +
-        `Final Grade: ${currentStudent.final}`;
-
-      const blob = new Blob([content], { type: "text/plain" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `student_${currentStudent.id}_grades.txt`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-  </script>
-
+    <script src="profile.js"></script>
 </body>
 </html>
