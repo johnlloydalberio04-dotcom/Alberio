@@ -1,0 +1,222 @@
+:root {
+  --accent1: #06b6d4;       /* Teal */
+  --accent2: #8b5cf6;       /* Purple */
+  --accent-dark: #5b21b6;   /* Dark Purple */
+  --card-bg: rgba(255, 255, 255, 0.12); /* Glass effect */
+  --text-light: #E0F2F1; 
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px var(--accent1);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--accent2);
+  }
+  100% {
+    box-shadow: 0 0 10px var(--accent1);
+  }
+}
+
+/* Body */
+body {
+  background: url('loyd.gif') center/cover no-repeat fixed;
+  font-family: 'Poppins', sans-serif;
+  color: #f8f8f8;
+  line-height: 1.8;
+  font-size: 20px; /* base font size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  padding: 70px 20px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeInUp 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating background effect in header */
+header::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, var(--accent1), transparent 70%);
+  opacity: 0.2;
+  animation: floatBg 12s infinite linear alternate;
+}
+@keyframes floatBg {
+  0% { transform: translate(-20%, -20%); }
+  100% { transform: translate(20%, 20%); }
+}
+
+/* Profile pic */
+.profile-pic {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 5px solid var(--accent1);
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent2);
+}
+
+/* Title Texts */
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+header .subtitle, 
+header .location {
+  color: #ddd;
+  font-size: 1.4rem;
+  margin-top: 8px;
+}
+
+/* Hire button */
+.hire-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: #fff;
+  padding: 18px 38px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  animation: pulseGlow 3s infinite;
+}
+.hire-button:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 20px var(--accent2);
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 950px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 35px;
+  border-radius: 18px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInUp 1s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* Headings in cards */
+.card h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+ul li {
+  margin-bottom: 10px;
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+ul li:hover {
+  transform: scale(1.05);
+  color: var(--accent1);
+}
+
+/* Links inside cards */
+.card a {
+  color: var(--accent1);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.card a:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 25px;
+  background: rgba(0,0,0,0.5);
+  color: #eee;
+  border-top: 1px solid var(--accent1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 1.1rem;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.4rem;
+  }
+  .card h2 {
+    font-size: 1.6rem;
+  }
+  .hire-button {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+  }
+  body {
+    font-size: 18px;
+  }
+}
