@@ -266,7 +266,18 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive */
+/* Responsive Navigation */
+@media (max-width: 1024px) {
+    nav .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #1abc9c;
+        font-size: 2rem;     /* Tablet size */
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
@@ -283,8 +294,11 @@ footer {
         position: absolute;
         top: 60px;
         right: 0;
-        width: 200px;
+        width: 80%;  
+        max-width: 250px;
+        border-radius: 8px;
         display: none;
+        padding: 1rem 0;
     }
 
     nav ul.show {
@@ -293,13 +307,18 @@ footer {
 
     nav ul li {
         margin: 1rem 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        display: block;
     }
 
     nav .menu-toggle {
-        display: block;
-        cursor: pointer;
-        color: #fff;
-        font-size: 1.5rem;
+        font-size: 2.5rem;   /* Bigger on mobile */
+        padding: 0.75rem 1.25rem;
     }
 
     /* Ensure project stays centered on mobile */
