@@ -152,8 +152,10 @@ h2 {
 /* --- Projects Section --- */
 .projects-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically if taller */
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .project {
@@ -164,6 +166,7 @@ h2 {
     transition: all 0.3s ease;
     text-align: center;
     max-width: 400px;
+    width: 100%;
 }
 
 .project:hover {
@@ -297,6 +300,16 @@ footer {
         cursor: pointer;
         color: #fff;
         font-size: 1.5rem;
+    }
+
+    /* Ensure project stays centered on mobile */
+    .projects-grid {
+        justify-content: center;
+    }
+
+    .project {
+        width: 90%;
+        max-width: 400px;
     }
 }
 
